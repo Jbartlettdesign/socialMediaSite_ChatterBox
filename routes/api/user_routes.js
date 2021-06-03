@@ -51,6 +51,9 @@ router.post('/', (req, res) => {
 // PUT /api/users/1 updating user
 router.put('/:id', (req, res) => {
     User.update(req.body, {
+
+        //we need this for hooking the bcrypt to work
+        individualHooks: true,
         where: { 
             id: req.params.id
         }
@@ -85,5 +88,28 @@ router.delete('/:id', (req, res) => {
         res.status(500).json(err);
     });
 });
-
+////////////////api/users/login
+router.post('/login', (req, res) => {
+// expects {email: 'lernantino@gmail.com', password: 'password1234'}
+User.findOne({
+    where: {
+        email: req.body.email
+    }
+}). then(dbUserData => {
+    if(!dbUserData){
+        res.status(404).json({message: "this user does not exist"});
+        return;
+    }
+    //next verify password if email exists
+    //calling User model 
+    const validPassword = dbUserData.checkPassword(req.body.password);
+    if(!validPassword){
+        res.status(400).json({message: 'Incorrect password!'})    
+        return;
+}
+//all good 
+res.json({user: dbUserData, message: 'You are now logged in!'});
+});
+  
+  });
 module.exports = router;
