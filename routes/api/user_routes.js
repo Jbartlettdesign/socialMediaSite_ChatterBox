@@ -1,6 +1,6 @@
 
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User, Post, Likes } = require('../../models');
 ///////////////////////////// GET /api/users
 
 router.get('/', (req, res) => {
@@ -20,7 +20,50 @@ router.get('/:id', (req, res) => {
         attributes: { exclude: ['password'] },
         where: {
             id: req.params.id
+        },
+        include:
+    [{
+        model:Comment,
+        attributes: ['id', 'comment_text', 'post_id', 'user_id'],
+        include:{
+            model:User,
+            attributes:['username']
         }
+    },
+        {
+            model:Post,
+            attributes: ['id', 'title', 'post_url', 'created_at']
+        },
+        {
+            model:Post,
+            attributes: ['title'],
+            through: Likes,
+            as: 'post_likes'
+        }
+    ]
+    /*{
+  "id": 1,
+  "username": "JohnBartlett",
+  "email": "jbartlettdesign@gmail.com",
+  "posts": [
+    {
+      "id": 1,
+      "title": "hello test 1",
+      "post_url": "www.helloworld.com",
+      "created_at": "2021-06-04T01:39:53.000Z"
+    }
+  ],
+  "post_likes": [
+    {
+      "title": "hello test 1",
+      "likes": {
+        "id": 1,
+        "user_id": 1,
+        "post_id": 1
+      }
+    }
+  ]
+}*/
     })
     .then(dbUserData => {
         if(!dbUserData){
