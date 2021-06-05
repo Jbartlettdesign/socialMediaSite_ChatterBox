@@ -23,7 +23,8 @@ router.get('/', (req, res) => {
                 attributes:['username']
             }
         ]
-    }).then(dbPostData => 
+    })
+    .then(dbPostData => 
         res.json(dbPostData))
         .catch(err => {
             console.log(err);

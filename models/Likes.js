@@ -28,7 +28,7 @@ const sequelize = require('../config/connection');
     },
     {
         sequelize,
-        timestamps: false,
+        timestamps: true,
         freezeTableName:true,
         underscored: true,
         modelName: 'likes'

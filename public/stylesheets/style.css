@@ -1,0 +1,413 @@
+@font-face {
+  font-family: 'Avenir LT Std Black';
+  src: url('AvenirLTStd-Black.woff2') format('woff2'),
+      url('AvenirLTStd-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Avenir LT Std';
+  src: url('AvenirLTStd-Roman.woff2') format('woff2'),
+      url('AvenirLTStd-Roman.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+* {
+  font-family: 'Avenir LT Std';
+  /*box-sizing: border-box;*/
+}
+
+h1{
+  margin-bottom: 5px;
+}
+.tanBackground{
+  background-color: #C7B299;
+  border-top: white solid 25px;
+}
+.left{
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-left: white 25px solid;
+  height: 100%;
+  
+  }
+  .right{
+    position: fixed;
+    top: 0;
+    right: 0;
+    border-right: white 25px solid;
+    height: 100%;
+    
+    }
+header{
+  background-color: #E6E6E6;
+  color: #C7B299;
+  padding-top: 30px;
+  
+}
+
+.hub{
+  background-color: #C7B299;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: #E6E6E6 solid 20px;
+
+}
+.notification{
+  display: flex;
+  align-items: flex-end;
+  margin-right: 50px;
+}
+.notification button{
+  margin-right: 50px;
+  font-size: 15px;
+  color: white;
+  background: none;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+  margin-bottom: 20px;
+}
+
+.chatterBoxLogo{
+  text-decoration: none;
+  color: #C7B299;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 50px;
+  font-size: 40px;
+}
+.searchAndPost{
+  background-color: #C7B299;
+  height: 150px;
+  
+}
+.searchAndPost input{
+  border-radius: 20px;
+  border: white solid 2px;
+  
+  font-size: 15px;
+  background-color: #C7B299;
+  padding: 10px;
+  margin-left: 40px;
+}
+::placeholder{
+  color: white;
+}
+#searchFor{
+  width: 365px;
+  height: 20px;
+  margin-top: 20px;
+  outline: none;
+  padding-left: 45px;
+  position: absolute;
+  left: 0px;
+}
+
+.searcher img{
+  width: 4%;
+  height: 4%;
+  position: relative;
+  left: 55px;
+  top:33px;
+  z-index: 1;
+  
+  
+}
+#feelingToday{
+  width: 400px;
+  height: 20px;
+  margin-top: 20px;
+  outline: none;
+}
+.stories{
+  height: 150px;
+  background-color: white;
+}
+main{
+  display: flex;
+  justify-content: center;
+}
+body, html {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: 'Avenir LT Std Black';
+  
+}
+.post {
+  /*display: flex;
+  justify-content: space-between;*/
+  /*border: white solid 1px; */
+  
+  width: 250px;
+  height: 250px;
+  line-height: 150%;
+  color: white;
+  margin-bottom: -100px;
+  
+}
+.letterBox{
+  height: 150%;
+  width: 150%;
+  margin-top: 30px;
+  padding-bottom: 13px;
+}
+.post_items{
+  position: relative;
+  bottom: 325px;
+  left: 80px;
+  font-size: 15px;
+  width: 225px;
+}
+.username{
+font-size: 30px;
+margin-bottom: 20px;
+}
+.createdAt{
+  position: relative;
+  bottom: 160px;
+  left: 80px;
+  font-size: 15px;
+  width: 225px;
+}
+.likeReply{
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  bottom: 100px;
+  border: white solid 2px;
+  left: 2px;
+  width: 330px;
+  font-size: 13px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+
+}
+.likeReply a{
+color: white;
+text-decoration: none;
+/*border-left: white solid 2px;*/
+
+}
+.line{
+  border-bottom: white solid 2px;
+  position: relative;
+  bottom: 120px;
+  left: 3px;
+  width: 360px;
+}
+.border{
+background-color: white;
+width: 2px;
+height: 30px;
+}
+.profilePic{
+  background-color: teal;
+  height: 125px;
+  width: 125px;
+  position: relative;
+  bottom: 415px;
+  right: 60px;
+  border-radius: 75px;
+
+}
+/*.lTcorner{
+  width: 50px;
+  height: 50px;
+  background-color:red;
+  position: relative;
+  right: 60px;
+  bottom: 20px;
+  font-size: 30px;
+  font-family: 'Fugaz One', cursive;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.rBcorner{
+  width: 50px;
+  height: 50px;
+  background-color:red;
+  position: relative;
+  left: 225px;
+  top: 50px;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Fugaz One', cursive;;
+}
+*/
+
+
+/*.post .title span {
+  font-style: italic;
+  font-size: 90%;
+  color: #7d7d7d;
+}*/
+/*
+a {
+  text-decoration: none;
+  color: #225ca3;
+  font-weight: bold;
+  transition: color .1s;
+}
+
+a:hover {
+  color: #3486eb;
+}
+
+button {
+  background-color: #225ca3;
+  border: 0;
+  padding: 1%;
+  color: white;
+  font-weight: bold;
+  transition: background-color .1s;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #3486eb;
+}
+
+
+textarea, input {
+  padding: .5%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+textarea:focus, input:focus {
+  outline: none;
+  border: 1px solid #3486eb;
+}
+
+textarea {
+  min-width: 40%;
+  min-height: 100px;
+}
+
+form > div {
+  margin-bottom: 2%;
+}
+
+form label {
+  display: block;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1%;
+}
+
+header h1 {
+  font-size: 1em;
+}
+
+main {
+  flex: 1;
+  padding: 2% 4%;
+}
+
+.btn-no-style {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: none;
+  color: #225ca3;
+  font-size: 100%;
+  font-weight: bold;
+  transition: color .1s;
+  margin-left: 16px;
+}
+
+.btn-no-style:hover {
+  background: none;
+  color: #3486eb;
+}
+
+.delete-post-btn {
+  background-color: #d41414;
+}
+
+.delete-post-btn:hover {
+  background-color: #ff643d;
+}
+
+.edit-link {
+  display: block;
+  margin: -1.5% 0 2% 0;
+}
+
+.upvote-btn {
+  background-color: #197d0f;
+  transition: background-color .1s;
+}
+
+.upvote-btn:hover {
+  background-color: #1f9c13;
+}
+
+.comment-form {
+  margin-bottom: 5%;
+}
+
+.comment {
+  padding: 1%;
+  margin-bottom: 1%;
+}
+
+.comment:nth-child(odd) {
+  background-color: #fff5eb;
+}
+
+.comment .meta {
+  font-size: 90%;
+  margin-bottom: .5%;
+  opacity: .6;
+}
+
+.new-post-form input {
+  width: 300px;
+}
+
+.edit-post-form {
+  margin-bottom: 5%;
+}
+
+footer {
+  border-top: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  padding: 1%;
+  font-size: 110%;
+}*/

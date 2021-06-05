@@ -1,0 +1,24 @@
+{{!sign in?}}
+{{! all double bracket values taken from home_routes.js}}
+<div class="post">
+      {{#each posts}}
+    <img class = "letterBox" src="../assets/letterbox.png">
+    
+    <article class = "post">
+        
+    <div class = "post_items">
+        <div class = "username">{{user.username}}</div>
+        <div>{{title}}</div>
+    </div>
+
+    <div class = "createdAt">{{created_at}}</div> 
+    <div class = 'line'></div>
+    <div class = "likeReply">
+        {{likes}} likes
+        <div class = 'border'></div>
+        <a href="/post/{{id}}">{{comments.length}} comment(s)</a>
+    </div> 
+    <div class = "profilePic"></div>
+    </article> 
+  {{/each}}
+</div>
