@@ -16,15 +16,15 @@
   font-display: swap;
 }
 
-
+* a{
+text-decoration: none;
+}
 * {
   font-family: 'Avenir LT Std';
   /*box-sizing: border-box;*/
 }
 
-h1{
-  margin-bottom: 5px;
-}
+
 .tanBackground{
   background-color: #C7B299;
   border-top: white solid 25px;
@@ -45,13 +45,16 @@ h1{
     height: 100%;
     
     }
-header{
+.header{
   background-color: #E6E6E6;
   color: #C7B299;
-  padding-top: 30px;
   
 }
-
+.headerTop{
+  background-color: #E6E6E6;
+  color: #C7B299;
+  
+}
 .hub{
   background-color: #C7B299;
   display: flex;
@@ -65,7 +68,6 @@ header{
   margin-right: 50px;
 }
 .notification button{
-  margin-right: 50px;
   font-size: 15px;
   color: white;
   background: none;
@@ -75,6 +77,7 @@ header{
 	cursor: pointer;
 	outline: inherit;
   margin-bottom: 20px;
+  margin-top: 5px;
 }
 
 .chatterBoxLogo{
@@ -85,23 +88,45 @@ header{
   margin-right: 50px;
   font-size: 40px;
 }
+.chatterBoxLogo img{
+  height: 30px;
+  width: auto;
+  margin-top: 10px;
+  margin-right: 10px;
+}
 .searchAndPost{
   background-color: #C7B299;
   height: 150px;
   
 }
-.searchAndPost input{
+.inputContent {
   border-radius: 20px;
   border: white solid 2px;
-  
   font-size: 15px;
   background-color: #C7B299;
   padding: 10px;
   margin-left: 40px;
 }
-::placeholder{
+#feelingToday{
+  border-radius: 20px;
+  border: white solid 2px;
+  font-size: 15px;
+  background-color: #C7B299;
+  padding: 10px;
+  margin-left: 40px;
+  color: white;
+  text-align: start;
+  width: 425px;
+  margin-top: 10px;
+  outline: none;
+  padding-left: 15px;
+  
+}
+
+.inputContent::placeholder{
   color: white;
 }
+
 #searchFor{
   width: 365px;
   height: 20px;
@@ -122,17 +147,12 @@ header{
   
   
 }
-#feelingToday{
-  width: 400px;
-  height: 20px;
-  margin-top: 20px;
-  outline: none;
-}
+
 .stories{
   height: 150px;
   background-color: white;
 }
-main{
+.main{
   display: flex;
   justify-content: center;
 }
@@ -143,30 +163,32 @@ body, html {
   font-family: 'Avenir LT Std Black';
   
 }
-.post {
-  /*display: flex;
-  justify-content: space-between;*/
-  /*border: white solid 1px; */
+.letterBox{
+  height: 130%;
   
+  margin-top: 30px;
+  padding-bottom: 13px;
+  object-fit: cover;
+
+}
+.post {
   width: 250px;
   height: 250px;
   line-height: 150%;
   color: white;
-  margin-bottom: -100px;
-  
-}
-.letterBox{
-  height: 150%;
-  width: 150%;
-  margin-top: 30px;
-  padding-bottom: 13px;
+  margin-bottom: -200px;  
 }
 .post_items{
   position: relative;
-  bottom: 325px;
   left: 80px;
   font-size: 15px;
   width: 225px;
+  
+  bottom: 300px;
+  
+}
+.content{
+  word-break:break-all;
 }
 .username{
 font-size: 30px;
@@ -213,47 +235,208 @@ background-color: white;
 width: 2px;
 height: 30px;
 }
-.profilePic{
-  background-color: teal;
+.profilePic img{
+  /*background-color: teal;*/
   height: 125px;
   width: 125px;
-  position: relative;
-  bottom: 415px;
+  position:relative;
+  top: 275px;
   right: 60px;
   border-radius: 75px;
+  object-fit: cover;
+  object-position: 100% 25%;
 
 }
-/*.lTcorner{
-  width: 50px;
-  height: 50px;
-  background-color:red;
+.bottomPost{
   position: relative;
-  right: 60px;
-  bottom: 20px;
-  font-size: 30px;
-  font-family: 'Fugaz One', cursive;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
+  top:70px;
+  height: 0px;
 }
-.rBcorner{
-  width: 50px;
-  height: 50px;
-  background-color:red;
+.buttonLogo{
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-right: 50px;
+}
+.buttonLogo img{
+  height: 20px;
+  width: auto;
+}
+/******************************/
+/******************************/
+/*login info*/
+.login-form{
+  margin-left: 75px;
+  margin-top: 30px;
+  
+}
+.signup-form{
+  margin-left: 75px;
+  
+}
+.login-form input{
+  border-radius: 20px;
+  border: white solid 2px;
+  font-size: 15px;
+  background-color: #C7B299;
+  margin-bottom: 20px;
+  padding: 10px;
+  outline: none;
+  width: 300px;
+  
+  
+}
+.signup-form input{
+  border-radius: 20px;
+  border: white solid 2px;
+  font-size: 15px;
+  background-color: #C7B299;
+  margin-bottom: 20px;
+  padding: 10px;
+  outline: none;
+  width: 300px;
+}
+
+.whiteOut button{
+  border-radius: 20px;
+  border: white solid 2px;
+  font-size: 15px;
+  background-color: white;
+  color:#C7B299;
+  margin-bottom: 20px;
+  padding: 10px;
+  font: inherit;
+	cursor: pointer;
+	outline: inherit;
+  width:160px;
+  text-align: start;
+} 
+.pic_upload{
+  margin-left: 75px;
+  margin-bottom: 20px;
   position: relative;
-  left: 225px;
-  top: 50px;
+  bottom: 250px;
+  right: 20px;
+}
+.pic_upload input{
+  border-radius: 20px;
+  border: white solid 2px;
+  font-size: 15px;
+  background-color: white;
+  color:#C7B299;
+  padding: 8px;
+  font: inherit;
+	cursor: pointer;
+	outline: inherit;
+  width:160px;
+  text-align: start;
+  /*position: relative;
+  top: 10px;
+  right: 20px;*/
+}
+
+input[type="file"] {
+
+  
+  opacity: 0;
+}
+
+/*********************************/
+nav {
+  position: relative;
+  top: 65px;
+  margin-left: 75px;
+  text-decoration: none;
   font-size: 30px;
   display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  font-family: 'Fugaz One', cursive;;
+  flex-wrap: wrap;
 }
-*/
+nav a{
+  color:#C7B299;
+  margin-right: 5px ;
+}
+nav button{
+  font-size: 30px;
+  border:none;
+  color:#C7B299;
+  background: none;
+}
+nav p{
+  margin: 0px;
+}
 
+/************************************/
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
 
+/* Modal Content/Box */
+.modal-content {
+  background-color: #E6E6E6;
+  /*opacity: 80%;*/
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border-radius: 10px;
+  width: 50%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #C7B299;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+#contentForPost{
+  border: none;
+  display: flex;
+  height: 100px;
+  width: 90%;
+  padding: 5px;
+  color:black;
+  font-size: 15px;
+  /*background-color: red;*/
+  }
+  textarea {
+    color: #C7B299;
+    background-color: #E6E6E6;
+      }
+      .contentForPost ::placeholder{
+        color:#C7B299;
+      }
+      textarea:focus, input:focus{
+        outline: 0;
+      }
+      .modal-content button{
+        border-radius: 20px;
+        /*border: white solid 2px;*/
+        border:none;
+        font-size: 15px;
+        background-color: #C7B299;
+        text-align: center;
+        outline: none;
+        width: 80px;
+        color: white;
+        padding: 10px;
+      }
+/**********************************/
 /*.post .title span {
   font-style: italic;
   font-size: 90%;

@@ -6,6 +6,7 @@ const{Post, User, Comment} = require('../models');
 
    
     router.get('/', (req, res) => {
+      console.log(req.session);
         Post.findAll({
           attributes: [
             'id',
@@ -25,7 +26,7 @@ const{Post, User, Comment} = require('../models');
             },
             {
               model: User,
-              attributes: ['username']
+              attributes: ['username','user_pic']
             }
           ]
         })
@@ -41,5 +42,12 @@ const{Post, User, Comment} = require('../models');
             console.log(err);
             res.status(500).json(err);
           });
+      });
+      router.get('/login', (req,res) => {
+        if (req.session.loggedIn) {
+          res.redirect('/');
+          return;
+        }
+        res.render('login');
       });
 module.exports = router;

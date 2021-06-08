@@ -1,0 +1,38 @@
+<form class="login-form">
+  <div>
+    <input type="text" id="email-login" placeholder="email"/>
+  </div>
+  <div>
+    <input type="password" id="password-login" placeholder="password"/>
+  </div>
+  <div class = "whiteOut">
+    <button type="submit">login</button>
+  </div>
+</form>
+
+<form class="signup-form">
+  <div>
+    <input type="text" id="username-signup" placeholder="username"/>
+  </div>
+  <div>
+      <input qutype ="text"  placeholder="profile picture" name = "picture"/>
+  </div>
+
+  
+  <div>
+    <input type="text" id="email-signup" placeholder="email"/>
+  </div>
+  <div>
+    <input type="password" id="password-signup" placeholder="password"/>
+  </div>
+  
+   
+    <div class = "whiteOut">
+        <button type="submit">signup</button>
+    </div>
+    </form>
+    <form  class = "pic_upload" method="POST" enctype="multipart/form-data" action="/api/posts/upload">
+        <input id = "profile_pic" type="file" name="filename">
+        <input type= "submit" value = "upload">
+    </form>
+<script src="/javascript/login.js"></script>

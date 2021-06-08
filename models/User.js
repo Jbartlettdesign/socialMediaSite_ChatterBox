@@ -20,6 +20,10 @@ User.init({
         primaryKey: true,
         autoIncrement: true
     },
+    user_pic:{
+        type:DataTypes.STRING,
+        allowNull:false,
+    },
     username:
     {
         type:DataTypes.STRING,

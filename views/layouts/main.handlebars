@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ChatterBox</title>
   <link rel="stylesheet" href="/stylesheets/style.css">
-  
 </head>
 
 <body class = "tanBackground">
@@ -14,27 +13,20 @@
     <div class = "right"></div>
     
 
-    <header>
+    <header class = "headerTop">
+      <!--<h1>
+      <a href="/">Just Tech News</a>
+      </h1>-->
+    <nav>
+      <a href="/login">login</a>
+      <p>/</p>
+      <button id = "logout" class = "">logout</button>
+    </nav>
       <h1>
-        <a class = "chatterBoxLogo" href="/">ChatterBox</a>
+        <a class = "chatterBoxLogo" href="/"><img src="../assets/logoTan.png">ChatterBox</a>
       </h1>
-        <div class = "hub">
-            <div class = "searchAndPost">
-                <input type="text" name="" id="feelingToday" placeholder="How are you feeling today?"><br>
-                <div class = "searcher">
-                    <img src="../assets/searchIcon.png"> 
-                    <input type="text" name="" id="searchFor" placeholder="Search">
-                </div>
-            </div>
-            <div class="notification">
-                <button><span></span>Home</button>
-                <button><span></span>Followers</button>
-                <button><span></span>Chatters</button>
-            </div>
-        </div>  
-      <div class = "stories">
-
-      </div>
+     
+     
     </header>
 
     <main >
@@ -45,7 +37,7 @@
     </footer>
 
   </div>
-
+<script src= "/javascript/logout.js"></script>
 </body>
 
 </html>

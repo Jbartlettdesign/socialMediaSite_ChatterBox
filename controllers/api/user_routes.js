@@ -1,5 +1,6 @@
 
 const router = require('express').Router();
+const session = require('express-session');
 const { User, Post, Likes } = require('../../models');
 ///////////////////////////// GET /api/users
 
@@ -78,16 +79,28 @@ router.get('/:id', (req, res) => {
 });
 // POST /api/users
 router.post('/', (req, res) => {
+  
     User.create({
+        user_pic:req.body.user_pic,
         username:req.body.username,
         email: req.body.email,
         password:req.body.password
     })
     //send it otherwise if theres an error tell the error
-    .then(dbUserData => res.json(dbUserData))
+    /*.then(dbUserData => res.json(dbUserData))
     .catch(err => {
         console.log(err);
         res.status(500).json(err);
+    });*/
+    .then(dbUserData => {
+        req.session.save(() => {
+            req.session.user_id = dbUserData.id;
+            req.session.username = dbUserData.username;
+            req.session.loggedIn = true;
+            
+console.log(session.user_id)
+            res.json(dbUserData);        
+        });
     });
 });
 
@@ -151,8 +164,27 @@ User.findOne({
         return;
 }
 //all good 
+req.session.save(() => {
+    // declare session variables
+    req.session.user_id = dbUserData.id;
+    req.session.username = dbUserData.username;
+    req.session.loggedIn = true;
+
 res.json({user: dbUserData, message: 'You are now logged in!'});
 });
-  
+});
   });
+
+//////////////////////////////////////
+router.post('/logout', (req, res) => {
+    if(req.session.loggedIn){
+        req.session.destroy(() => {
+            res.status(204).end();
+        });
+    }
+    else{
+        res.status(404).end();
+        console.log("failed to load");
+    }
+});
 module.exports = router;

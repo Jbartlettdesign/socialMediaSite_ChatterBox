@@ -1,24 +1,71 @@
 {{!sign in?}}
 {{! all double bracket values taken from home_routes.js}}
+<div class = "header">
+        <div class = "hub">
+            <div class = "searchAndPost">
+              <!-- Trigger/Open The Modal -->
+                <button id="feelingToday">How are you feeling today?</button><br>
+
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+
+                  <!-- Modal content -->
+                  <div class="modal-content">
+                    <span class="close">&times;</span>
+                      <form action="/action_page.php"></form>
+                        <textarea name ="" id="contentForPost" placeholder ="Remember, be kind..."></textarea>
+                        <button id = "whatYouWrite" type="submit">Post</button>
+                      </form>
+                  </div>
+                </div>
+                {{!<input type="text" name="" id="feelingToday" placeholder="How are you feeling today?"><br>}}
+                <div class = "searcher">
+                    <img src="../assets/searchIcon.png"> 
+                    <input class = "inputContent" type="text" name="" id="searchFor" placeholder="Search">
+                </div>
+            </div>
+            <div class="notification">
+              <div class ="buttonLogo">
+                <img src="../assets/home.png">
+                <button>Home</button>
+              </div>
+              <div class ="buttonLogo">
+                <img src="../assets/follow.png">
+                <button>Followers</button>
+              </div>
+              <div class ="buttonLogo">
+                <img src="../assets/logoWhite.png">
+                <button>Chatters</button>
+              </div>
+            </div>
+        </div>  
+        </div>
+      <div class = "stories">
+
+      </div>
+<div class = "main">
 <div class="post">
       {{#each posts}}
-    <img class = "letterBox" src="../assets/letterbox.png">
-    
-    <article class = "post">
-        
-    <div class = "post_items">
-        <div class = "username">{{user.username}}</div>
-        <div>{{title}}</div>
+      <div class = "profilePic"><img src="{{user.user_pic}}"></div>
+      <img class = "letterBox" src="../assets/letterbox.png">
+      <div class = "bottomPost">
+        <div class = "createdAt">{{created_at}}</div> 
+        <div class = 'line'></div>
+        <div class = "likeReply">
+            {{likes}} likes
+            <div class = 'border'></div>
+            <a href="/post/{{id}}">{{comments.length}} comment(s)</a>
+      </div> 
     </div>
-
-    <div class = "createdAt">{{created_at}}</div> 
-    <div class = 'line'></div>
-    <div class = "likeReply">
-        {{likes}} likes
-        <div class = 'border'></div>
-        <a href="/post/{{id}}">{{comments.length}} comment(s)</a>
-    </div> 
-    <div class = "profilePic"></div>
+    <article class = "post">
+          
+          <div class = "post_items">
+            <div class = "username">{{user.username}}</div>
+            <div class = "content">{{title}}</div>
+          </div>
+    
     </article> 
   {{/each}}
 </div>
+</div>
+<script src="/javascript/writePost.js"></script>
