@@ -28,48 +28,54 @@ text-decoration: none;
 .tanBackground{
   background-color: #C7B299;
   border-top: white solid 25px;
+  
 }
 .left{
   position: fixed;
   top: 0;
   left: 0;
   border-left: white 25px solid;
+  /*border-right: #C7B299 100px solid;*/
   height: 100%;
-  
+
   }
   .right{
     position: fixed;
     top: 0;
     right: 0;
     border-right: white 25px solid;
+    /*border-left: #C7B299 100px solid;*/
     height: 100%;
-    
     }
+    
 .header{
-  background-color: #E6E6E6;
+  background-color: #ece6e1;
   color: #C7B299;
   
 }
 .headerTop{
-  background-color: #E6E6E6;
+  background-color: #eedbcc;
   color: #C7B299;
-  
+
 }
 .hub{
-  background-color: #C7B299;
+  /*background-color: #C7B299;*/
   display: flex;
   justify-content: space-between;
   border-bottom: #E6E6E6 solid 20px;
+  margin-bottom: -15px;
+  overflow:hidden;
 
 }
 .notification{
   display: flex;
   align-items: flex-end;
   margin-right: 50px;
+  margin-top: 85px;
 }
 .notification button{
   font-size: 15px;
-  color: white;
+  color: #C7B299;
   background: none;
 	border: none;
 	padding: 0;
@@ -94,9 +100,21 @@ text-decoration: none;
   margin-top: 10px;
   margin-right: 10px;
 }
+.kraft{
+position: relative;
+top: 505px;
+right: 22px;
+height: 350px;
+width: auto;
+z-index: -999;
+margin-top: -400px;
+
+}
+
 .searchAndPost{
-  background-color: #C7B299;
-  height: 150px;
+  /*background-color: #C7B299;*/
+  height: 130px;
+  margin-top: 10px;
   
 }
 .inputContent {
@@ -106,6 +124,9 @@ text-decoration: none;
   background-color: #C7B299;
   padding: 10px;
   margin-left: 40px;
+  /*border-right: none;
+  border-top: none;*/
+
 }
 #feelingToday{
   border-radius: 20px;
@@ -120,15 +141,28 @@ text-decoration: none;
   margin-top: 10px;
   outline: none;
   padding-left: 15px;
-  
+  /*border-right: none;
+  border-top: none;*/
 }
+
+/*.feelings {
+    position:relative;
+    bottom: 200px;    
+    z-index: -1;
+    height: auto;
+    width: 100%;
+    bottom: 400px;
+    margin-bottom: -250px;
+    
+}*/
+
 
 .inputContent::placeholder{
   color: white;
 }
 
 #searchFor{
-  width: 365px;
+  width: 180px;
   height: 20px;
   margin-top: 20px;
   outline: none;
@@ -155,6 +189,8 @@ text-decoration: none;
 .main{
   display: flex;
   justify-content: center;
+  margin-top: -100px;
+
 }
 body, html {
   height: 100%;
@@ -163,9 +199,15 @@ body, html {
   font-family: 'Avenir LT Std Black';
   
 }
+body{
+  background-image: url("../assets/Kraft-Paper-Texture-long.png");
+  background-repeat: repeat-x;
+  z-index: -999;
+
+}
+
 .letterBox{
   height: 130%;
-  
   margin-top: 30px;
   padding-bottom: 13px;
   object-fit: cover;
@@ -176,7 +218,7 @@ body, html {
   height: 250px;
   line-height: 150%;
   color: white;
-  margin-bottom: -200px;  
+  margin-bottom: -200px;
 }
 .post_items{
   position: relative;
@@ -215,11 +257,20 @@ margin-bottom: 20px;
   align-items: center;
   padding-left: 15px;
   padding-right: 15px;
-
+  margin-bottom: -80px;
+  
 }
+
+
 .likeReply a{
-color: white;
+background-color: white;
 text-decoration: none;
+color: #C7B299;
+padding: 5px;
+padding-left: 10px;
+padding-right: 10px;
+position: relative;
+left: 15px;
 /*border-left: white solid 2px;*/
 
 }
@@ -244,7 +295,7 @@ height: 30px;
   right: 60px;
   border-radius: 75px;
   object-fit: cover;
-  object-position: 100% 25%;
+  /*object-position: 100% 25%;*/
 
 }
 .bottomPost{
@@ -417,6 +468,7 @@ nav p{
   textarea {
     color: #C7B299;
     background-color: #E6E6E6;
+    resize: none;
       }
       .contentForPost ::placeholder{
         color:#C7B299;
@@ -436,6 +488,118 @@ nav p{
         color: white;
         padding: 10px;
       }
+/********************************************/
+/*********adding comments***********/
+.comment-form textarea{
+background: none;
+border: white 2px solid; 
+color: white;
+/*background-color: white;*/
+width: 100%;
+position: relative;
+right: 3px;
+/*border-radius: 15px;*/
+/*margin-top: 20px;*/
+}
+.comment-form ::placeholder{
+  color:white;
+  padding: 7px 5px 5px 5px;
+}
+.comment-form{
+  margin-top: -30px;
+}
+.commentUploader{
+  margin-bottom: 50px;
+  margin-top: -40px;
+  /*border-bottom: white 2px solid;*/
+  border: white 2px solid;
+  /*border-right: 2px solid white;
+  border-right: 2px solid white;
+  border-right: 2px solid white;*/
+
+}
+
+.parentRealText{
+  display: flex;
+  align-items: center; 
+  margin-bottom: 10px;
+}
+
+.commentUploader .text{
+  word-break:break-all;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  line-height: 1;
+  margin-top: 25px;
+  
+/*margin-bottom: 10px*/
+}
+
+.comments{
+  /*border: white solid 2px;*/
+  margin-top: 25px;
+  width: 140%;
+  color:white;
+  position: relative;
+  left: 10px;
+  margin-bottom: -100px;
+  
+  /*display: none;*/
+}
+.displayNone{
+  display: none;
+
+}
+
+.submitUpvote button{
+  background: none;
+  /*border: white 2px solid; */
+  border:none;
+  color: white;
+}
+.smallProfilePic img{
+  height: 50px;
+  width: 50px;
+  border-radius: 30px;
+  position:relative;
+  right: 27px;
+  bottom: 18px;
+  object-fit: cover;
+  margin-right: -100px;
+  margin-bottom: -10px;
+  z-index: 999;
+  /*object-position: 100% 100%;*/
+
+}
+.meta{
+  position: relative;
+  left: 27px;
+  top: 30px;
+}
+/**********************************/
+.searchIndex{
+  /*height: 200px;*/
+  height: auto; 
+  width: 215px;
+  color: #C7B299;
+  position: absolute;
+  left:40px;
+  top: 290px;
+
+  border-radius: 20px;
+  border: white solid 2px;
+  font-size: 15px;
+  background-color: #ece6e1;
+  padding: 10px;
+}
+.searchIndex a{
+  margin-top:4px;
+  margin-bottom:4px;
+  display: block;
+  text-decoration: none;
+  color: #C7B299;
+}
 /**********************************/
 /*.post .title span {
   font-style: italic;
