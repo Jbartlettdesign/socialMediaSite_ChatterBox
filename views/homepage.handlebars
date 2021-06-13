@@ -60,9 +60,10 @@
         <div class = 'line'></div>
         <div class = "likeReply">
             {{likes}} likes
+            <button type="button" class="upvote-btn">upvote</button>
             {{!<a id = 'comment' href="/post/{{id}}{{!">{{comments.length}} {{!comment(s)</a>}}
-            <a href="#submitComment" class = 'comment'>view {{comments.length}} comment(s)</a>
-            
+            <a  id = "button_{{id}}" class = 'comment'>view {{comments.length}} comment(s)</a>
+            {{!href="#submitComment"}}
       </div> 
     </div>
     <article class = "post">
@@ -74,8 +75,8 @@
     
     </article> 
           
-
-  <div class="comments displayNone">
+<div id = {{id}} class = "displayNone" name = "theBlock">
+  <div class="comments">
      {{#each comments}}
   <section class="commentUploader">
     <div class="meta">
@@ -92,10 +93,11 @@
       
     </div>
   </section> 
+
     {{/each}}
  
+  </div>
 </div>
-
   {{/each}}
 </div>
 

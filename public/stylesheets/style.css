@@ -110,6 +110,15 @@ z-index: -999;
 margin-top: -400px;
 
 }
+/*.smallKraft{
+  position: relative;
+  bottom: 50px;
+  height:200px;
+  width: 290px;
+  z-index: -999;
+  margin-top: -400px;
+  object-fit: cover;
+  }*/
 
 .searchAndPost{
   /*background-color: #C7B299;*/
@@ -258,6 +267,8 @@ margin-bottom: 20px;
   padding-left: 15px;
   padding-right: 15px;
   margin-bottom: -80px;
+  background-color: #eedbcc;
+  color: #C7B299;
   
 }
 
@@ -277,7 +288,7 @@ left: 15px;
 .line{
   border-bottom: white solid 2px;
   position: relative;
-  bottom: 120px;
+  bottom: 115px;
   left: 3px;
   width: 360px;
 }
@@ -495,7 +506,7 @@ background: none;
 border: white 2px solid; 
 color: white;
 /*background-color: white;*/
-width: 100%;
+width: 139%;
 position: relative;
 right: 3px;
 /*border-radius: 15px;*/
@@ -506,8 +517,10 @@ right: 3px;
   padding: 7px 5px 5px 5px;
 }
 .comment-form{
-  margin-top: -30px;
+  position: relative;
+  left: 10px;
 }
+
 .commentUploader{
   margin-bottom: 50px;
   margin-top: -40px;
@@ -516,7 +529,8 @@ right: 3px;
   /*border-right: 2px solid white;
   border-right: 2px solid white;
   border-right: 2px solid white;*/
-
+  background-color: #e2d4c8;
+  
 }
 
 .parentRealText{
@@ -540,10 +554,10 @@ right: 3px;
   /*border: white solid 2px;*/
   margin-top: 25px;
   width: 140%;
-  color:white;
+  color: #C7B299;
   position: relative;
   left: 10px;
-  margin-bottom: -100px;
+  margin-bottom: -30px;
   
   /*display: none;*/
 }
@@ -576,11 +590,13 @@ right: 3px;
   position: relative;
   left: 27px;
   top: 30px;
+  color: #C7B299;
+
 }
 /**********************************/
 .searchIndex{
   /*height: 200px;*/
-  height: auto; 
+  min-height: 25px; 
   width: 215px;
   color: #C7B299;
   position: absolute;

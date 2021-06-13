@@ -51,11 +51,12 @@ function findUser(dataResponse){
                 }
             }
             //nameArray = [];
-            
+            if(dataResponse){
              dataResponse.forEach(element => {
                  console.log(adjustedWord);
                 nameArray.push(element);
             });       
+        }
                             //console.log(nameArray);    
 
             nameArray.forEach(elementName => {
@@ -86,15 +87,19 @@ function findUser(dataResponse){
             }
             else{
                 finalArray = finalArray.filter(e => e !== elementName.username);
-                console.log(finalArray);
+                //console.log(finalArray);
                 //return;
             }
              /**************************************/
                         while (searchColumn.firstChild) {
                         searchColumn.removeChild(searchColumn.firstChild);
-                        }
+                        } 
+                        if(finalArray.length > 0){
                         parentSearch.appendChild(searchColumn);
-                               
+                        }
+                        else{
+                            searchColumn.remove();
+                        }  
                         /////////////////////////
                         finalArray.forEach(element => {
                             var a = document.createElement("a"); 

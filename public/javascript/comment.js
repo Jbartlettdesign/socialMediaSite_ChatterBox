@@ -28,16 +28,37 @@ async function getInfo(event){
     }
 
 function addComment(){
+    var commenter;
+    var comments;
+    if(commenter = document.querySelector(".commenter")){
+    
+    commenter.remove();
+    alreadyClicked = false;
+        if(comments = document.getElementsByName("theBlock")){
+        console.log(comments);
+        comments.forEach(element => {
+            element.setAttribute("class", "displayNone");
+        });
+    }
+    }
+
     if(!alreadyClicked){
+        alreadyClicked = true;
+        var foundId = (this.id);
+        var splitString = foundId.split("_");
+        var number = splitString[1];
+        console.log(number);
             console.log("add comment");
             let div = document.createElement("div");
             div.setAttribute("class", "commenter");
             var post = this.parentElement;
             var parent = post.parentElement;
+            //var granparent = parent.parentElement;
+            console.log(parent);
             
-            var granparent = parent.parentElement;
-            console.log(granparent);
-        
+            var commentBlock = document.getElementById(number);
+            
+            /*************************************************************/
             div.innerHTML = `<form class="comment-form">
             <div>
                 <textarea class = "postComment" name="comment-body" placeholder = "leave comment here..."></textarea>
@@ -45,30 +66,24 @@ function addComment(){
             
             <div class = "submitUpvote">
                 <button id = "submitComment" type="click">add comment</button>
-                <button type="button" class="upvote-btn">upvote</button>
             </div>
             </form>`
-            var commentBlock = document.querySelector('.comments');
-            //commentBlock.removeAttribute("class", "displayNone");
-            commentBlock.setAttribute("class", "comments");
+            /*************************************************************/
+
+            commentBlock.removeAttribute("class", "displayNone");
+            //commentBlock.setAttribute("class", "comments");
             commentBlock.appendChild(div);
-            document.querySelector('#submitComment').addEventListener('click', getInfo);
+            //document.querySelector('#submitComment').addEventListener('click', getInfo);
             alreadyClicked = true;
         }
         else{
-            var commenter = document.querySelector(".commenter");
-            commenter.remove();
-            var commentBlock = document.querySelector('.comments');
-            commentBlock.setAttribute("class", "displayNone");
-            alreadyClicked = false;
-        }
+                 }
     }
    
 
-  var allComments =  document.querySelectorAll('.comment')
+  var allComments =  document.querySelectorAll('.comment');
   for(let i = 0; i < allComments.length; i++){
       element = allComments[i].addEventListener('click', addComment);
-      
     }
 
   
