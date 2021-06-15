@@ -48,7 +48,7 @@ router.get('/', (req, res) => {
 
             {
                 model:User,
-                attributes:['username', 'user_pic']
+                attributes:['username', 'user_pic', 'id']
             }
         ]
     })
@@ -58,6 +58,7 @@ router.get('/', (req, res) => {
             console.log(err);
             res.status(500).json(err);
         });
+        
 });
 router.get('/:id', (req, res) => {
     Post.findOne({
@@ -73,12 +74,12 @@ router.get('/:id', (req, res) => {
                 attributes: ['id', 'comment_text', 'post_id', 'user_id'],
                 include:{
                     model:User,
-                    attributes:['username']
+                    attributes:['username', 'user_pic',]
                 }
             },
             {
             model:User,
-            attributes:['username']
+            attributes:['username', 'user_pic',]
             }
         ]
     }).then(dbPostData => {
@@ -94,11 +95,12 @@ router.get('/:id', (req, res) => {
     });
 });
 router.post('/', (req, res) => {
-    console.log(req.session.user_id)
+    console.log(req.session);
     Post.create({
         title:req.body.title,
         post_url: req.body.post_url,
         //user_id: req.body.user_id
+        //change back
         user_id: req.session.user_id
     }).then(dbPostData => res.json(dbPostData))
     .catch(err => {
@@ -196,4 +198,5 @@ router.delete('/:id', (req,res) => {
     })
   })
 */
+
 module.exports = router;

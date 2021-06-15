@@ -1,37 +1,54 @@
-<article class="post">
-  <div class="title">
-    <a href="{{post.post_url}}" target="_blank">{{post.title}}</a>
-    <span>({{post.post_url}})</span>
-  </div>
-  <div class="meta">
-    {{post.vote_count}} point(s) by {{post.user.username}} on
-    {{post.created_at}}
-    |
-    {{!<a href="/post/{{post.id = /post/:id in home routes}}
-    <a href="/post/{{post.id}}">{{post.comments.length}} comment(s)</a>
-  </div>
 
-  <form class="comment-form">
-  <div>
-    <textarea name="comment-body"></textarea>
-  </div>
+<div class = "main">
+<div class="post" id = "postBlock">
+      <div class = "blockColor"></div>
+      <img class = "kraft" src="../assets/Kraft-Paper-Texture.jpg">
+      <div class = "profilePic"><img src="{{post.user.user_pic}}"></div>
+      <img class = "letterBox" src="../assets/letterbox.png">
+      <div class = "bottomPost">
+        <div class = "createdAt">{{format_date post.created_at}}</div> 
+        <div class = 'line'></div>
+        <div class = "likeReply">
+            {{post.likes}} likes
+            <button type="button" class="upvote-btn">upvote</button>
+            <a href="#submitComment" id = "{{post.id}}_{{post.user.id}}" class = 'comment'>write a comment</a>
 
-  <div>
-    <button type="submit">add comment</button>
-    <button type="button" class="upvote-btn">upvote</button>
-  </div>
-</form>
-
-<div class="comments">
-  {{#each post.comments}}
-  <section class="comment">
+      </div> 
+    </div>
+    <article class = "post">
+          
+          <div class = "post_items">
+            <div class = "username">{{post.user.username}}</div>
+            <div class = "content">{{post.title}}</div>
+          </div>
+    
+    </article> 
+          
+<div id = {{post.id}} class = "" name = "theBlock">
+  <div class="comments" id = "{{post.id}}_comments">
+     {{#each post.comments}}
+  <section class="commentUploader">
     <div class="meta">
-      {{user.username}} on {{created_at}}
+      {{user.username}} on {{format_date created_at}}
     </div>
-    <div class="text">
-      {{comment_text}}
+    <div class = "smallProfilePic"><img src="{{user.user_pic}}"></div>
+    <div class = "parentRealText">
+      
+      <div class="text">
+        {{comment_text}}
+      </div>
+      
     </div>
-  </section>
-  {{/each}}
+  </section> 
+
+    {{/each}}
+ 
+  </div>
+  
 </div>
-</article>
+<div class = "footer">
+  </div>
+</div>
+
+</div>
+<script src="/javascript/comment.js"></script>

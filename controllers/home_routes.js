@@ -3,7 +3,7 @@ const router = require('express').Router();
 const { create } = require('express-handlebars');
 /////////////////
 const sequelize = require('../config/connection');
-const{Post, User, Comment} = require('../models');
+const{Post, User, Comment, Likes} = require('../models');
 
    
     router.get('/', (req, res) => {
@@ -23,12 +23,12 @@ const{Post, User, Comment} = require('../models');
               attributes: ['id', 'comment_text', 'post_id', 'user_id','created_at'],
               include: {
                 model: User,
-                attributes: ['username', 'user_pic']
+                attributes: ['username', 'user_pic', 'id']
               }
             },
             {
               model: User,
-              attributes: ['username','user_pic']
+              attributes: ['username','user_pic', 'id']
             }
           ]
         })
@@ -46,6 +46,8 @@ const{Post, User, Comment} = require('../models');
             res.status(500).json(err);
           });
       });
+      
+      ///////////////////////////////////////
       router.get('/login', (req,res) => {
         if (req.session.loggedIn) {
           res.redirect('/');
@@ -85,12 +87,12 @@ const{Post, User, Comment} = require('../models');
               attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
               include: {
                 model: User,
-                attributes: ['username']
+                attributes: ['username','user_pic', 'id']
               }
             },
             {
               model: User,
-              attributes: ['username']
+              attributes: ['username','user_pic', 'id']
             }
           ]
         })
@@ -102,7 +104,8 @@ const{Post, User, Comment} = require('../models');
       
             // serialize the data
             const post = dbPostData.get({ plain: true });
-      
+                  console.log(post);
+
             // pass data to template
             res.render('single-post', { post });
           })
@@ -113,4 +116,51 @@ const{Post, User, Comment} = require('../models');
 
         });
       ///////////////////////////////////////////
+      router.get('/user/posts/:id', (req, res) => {
+        User.findOne({
+          attributes: { exclude: ['password'] },
+
+            where: {
+                id: req.params.id
+            },
+            include:
+            [{
+              model:Post,
+              attributes: ['id', 'title', 'post_url', 'created_at'],
+              include:{
+                model:User,
+                attributes:['username', 'user_pic', 'id']
+        }
+             
+          
+        
+      },
+          
+          
+      {
+              model:Post,
+              attributes: ['title'],
+              through: Likes,
+              as: 'post_likes'
+      }
+      ]
+       
+        })
+        .then(dbUserData => {
+            if(!dbUserData){
+                res.status(404).json({message: "No user found with this id"});
+                return;
+            } var p = dbUserData.posts;
+            const users = p.map(user => 
+
+            user.get({plain: true}));
+          res.render('user', { users });
+              //console.log(dbUserData.posts)
+            // pass data to template
+            //res.json(dbUserData.posts);
+          }).catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+    });
 module.exports = router;

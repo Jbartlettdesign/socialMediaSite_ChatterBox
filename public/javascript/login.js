@@ -6,7 +6,7 @@ async function signupFormHandler(event) {
     const username = document.querySelector('#username-signup').value.trim();
     const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
-    let user_pic = "../uploads/" + document.querySelector('#profile_pic').files[0].name;
+    let user_pic = "/uploads/" + document.querySelector('#profile_pic').files[0].name;
     //console.log(user_pic);
     if (username && email && password) {
         const response = await fetch('/api/users', {

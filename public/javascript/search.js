@@ -1,5 +1,7 @@
+var trueID;
 var adjustedWord;
 var finalArray = [];
+var idArray = [];
 var dataResponse;
 openTable = false;
 oneTimeOnly = true;
@@ -53,7 +55,7 @@ function findUser(dataResponse){
             //nameArray = [];
             if(dataResponse){
              dataResponse.forEach(element => {
-                 console.log(adjustedWord);
+                 //console.log(adjustedWord);
                 nameArray.push(element);
             });       
         }
@@ -67,19 +69,18 @@ function findUser(dataResponse){
                     if(adjustedWord.charAt(i -1) === elementName.username.charAt(i -1)){
                     
                         if(!finalArray.includes(elementName.username)){
-                        finalArray.push(elementName.username);
-
+                         finalArray.push(elementName.username);
+                         idArray.push(elementName.username + "_" + elementName.id);
+                         //console.log(idArray);  
                         /**************************************/
-                        /*while (searchColumn.firstChild) {
-                        searchColumn.removeChild(searchColumn.firstChild);
-                        }*/
                         parentSearch.appendChild(searchColumn);
-                        var a = document.createElement("a"); 
+                        /*var a = document.createElement("a"); 
                         //////////////////////////
-                        a.setAttribute('href', "/api/users/" + elementName.id);       
-                        /////////////////////////         
+                        a.setAttribute('href', "/user/" + elementName.id);       
+                        /////////////////////////   
+                        console.log(elementName.id);      
                         a.innerText = elementName.username;
-                        searchColumn.appendChild(a);
+                        searchColumn.appendChild(a);*/
                         /**************************************/
                     }
                 }
@@ -88,7 +89,9 @@ function findUser(dataResponse){
             else{
                 finalArray = finalArray.filter(e => e !== elementName.username);
                 //console.log(finalArray);
-                //return;
+                //return;                        
+                //console.log(finalArray)
+
             }
              /**************************************/
                         while (searchColumn.firstChild) {
@@ -102,9 +105,23 @@ function findUser(dataResponse){
                         }  
                         /////////////////////////
                         finalArray.forEach(element => {
-                            var a = document.createElement("a"); 
+                            idArray.forEach(elementID => {
+                               let string = elementID
+                                let substring = element; 
+                            if(string.includes(substring)){
+                                //console.log(string);
+                              var split = string.split("_");
+                                trueID = split[1];
+                                //console.log(trueID);
+                            }
+
+                            })
+                            
+                            //console.log(string.includes(substring)
+                            var a = document.createElement("a");
+                            //console.log(elementName) 
                             //////////////////////////
-                            a.setAttribute('href', "/api/users/" + elementName.id);
+                            a.setAttribute('href', "/user/posts/" + trueID);
                             a.innerText = element;
                             searchColumn.appendChild(a);
                         });        
@@ -117,41 +134,6 @@ function findUser(dataResponse){
         }
     });
     }
-        
-                    //console.log(element.username + "" + i);
-                    /*while (searchColumn.firstChild) {
-                    searchColumn.removeChild(searchColumn.firstChild);
-                    }*/
-
-                //console.log("found match");
-                
-                /*parentSearch.appendChild(searchColumn);
-                var a = document.createElement("a"); 
-                //////////////////////////
-                a.setAttribute('href', "/api/users/" + element.id);       
-                /////////////////////////         
-                a.innerText = element.username;
-                searchColumn.appendChild(a);*/
-
-                //console.log(searchColumn.childElementCount);
-                /*while (searchColumn.firstChild) {
-                    searchColumn.removeChild(searchColumn.firstChild);
-                    }*/
-            
-            /*else{
-                nameArray = nameArray.filter(e => e !== element.username);
-                console.log(nameArray);
-                
-            }*/
-            /*else if(lengthOfSearch < previousLength){
-                console.log("less than last search");
-                searchColumn.remove();
-                openTable = false;*/
-            
-            
-        
-        //console.log(nameArray)
-    
             
 
 

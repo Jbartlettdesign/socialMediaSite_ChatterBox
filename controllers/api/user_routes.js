@@ -24,23 +24,25 @@ router.get('/:id', (req, res) => {
         },
         include:
     [{
-        model:Comment,
-        attributes: ['id', 'comment_text', 'post_id', 'user_id'],
-        include:{
-            model:User,
-            attributes:['username']
+            model:Comment,
+            attributes: ['id', 'comment_text', 'post_id', 'user_id'],
+            include:{
+                model:User,
+                attributes:['username', 'user_pic']
         }
     },
-        {
+        
+    {
             model:Post,
             attributes: ['id', 'title', 'post_url', 'created_at']
-        },
-        {
+    },
+        
+    {
             model:Post,
             attributes: ['title'],
             through: Likes,
             as: 'post_likes'
-        }
+    }
     ]
     /*{
   "id": 1,
@@ -96,9 +98,10 @@ router.post('/', (req, res) => {
         req.session.save(() => {
             req.session.user_id = dbUserData.id;
             req.session.username = dbUserData.username;
+            req.session.user_pic = dbUserData.user_pic;
             req.session.loggedIn = true;
             
-console.log(session.user_id)
+console.log(session);
             res.json(dbUserData);        
         });
     });

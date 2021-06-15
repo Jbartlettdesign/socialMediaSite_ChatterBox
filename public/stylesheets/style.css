@@ -1,21 +1,7 @@
-@font-face {
-  font-family: 'Avenir LT Std Black';
-  src: url('AvenirLTStd-Black.woff2') format('woff2'),
-      url('AvenirLTStd-Black.woff') format('woff');
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
 
-@font-face {
-  font-family: 'Avenir LT Std';
-  src: url('AvenirLTStd-Roman.woff2') format('woff2'),
-      url('AvenirLTStd-Roman.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
+*{
+  font-family: 'Nunito Sans', sans-serif;
 }
-
 * a{
 text-decoration: none;
 }
@@ -49,13 +35,19 @@ text-decoration: none;
     }
     
 .header{
-  background-color: #ece6e1;
+  background-color: #7e7670;
   color: #C7B299;
   
 }
+/*.colorBlock{
+height: 250px;
+margin-bottom: -250px;
+}*/
 .headerTop{
   background-color: #eedbcc;
   color: #C7B299;
+  margin-bottom: 25px;
+  height: 105px;
 
 }
 .hub{
@@ -85,7 +77,11 @@ text-decoration: none;
   margin-bottom: 20px;
   margin-top: 5px;
 }
+h1{
+  display: flex;
+  justify-content: flex-end;
 
+}
 .chatterBoxLogo{
   text-decoration: none;
   color: #C7B299;
@@ -93,6 +89,8 @@ text-decoration: none;
   justify-content: flex-end;
   margin-right: 50px;
   font-size: 40px;
+  position: relative;
+  top: -85px;
 }
 .chatterBoxLogo img{
   height: 30px;
@@ -192,15 +190,16 @@ margin-top: -400px;
 }
 
 .stories{
-  height: 150px;
-  background-color: white;
+  height: 25px;
+  background-color: #ece6e1;
 }
 .main{
   display: flex;
   justify-content: center;
   margin-top: -100px;
-
+  
 }
+
 body, html {
   height: 100%;
   padding: 0;
@@ -208,11 +207,12 @@ body, html {
   font-family: 'Avenir LT Std Black';
   
 }
+
 body{
   background-image: url("../assets/Kraft-Paper-Texture-long.png");
   background-repeat: repeat-x;
   z-index: -999;
-
+  /*background-position-y: -159%;*/
 }
 
 .letterBox{
@@ -231,23 +231,28 @@ body{
 }
 .post_items{
   position: relative;
-  left: 80px;
+  left: 60px;
   font-size: 15px;
   width: 225px;
-  
   bottom: 300px;
-  
+  border-bottom: white 1px solid; 
+  padding-left: 20px;
+  height: 22%;
 }
 .content{
   word-break:break-all;
+  position: relative;
+  top: 20px;
+  max-height: 170px;
 }
 .username{
-font-size: 30px;
+font-size: 20px;
 margin-bottom: 20px;
+
 }
 .createdAt{
   position: relative;
-  bottom: 160px;
+  bottom:343px;
   left: 80px;
   font-size: 15px;
   width: 225px;
@@ -256,7 +261,7 @@ margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
   position: relative;
-  bottom: 100px;
+  bottom: 80px;
   border: white solid 2px;
   left: 2px;
   width: 330px;
@@ -268,8 +273,7 @@ margin-bottom: 20px;
   padding-right: 15px;
   margin-bottom: -80px;
   background-color: #eedbcc;
-  color: #C7B299;
-  
+  color: rgb(143, 138, 138);  
 }
 
 
@@ -288,7 +292,7 @@ left: 15px;
 .line{
   border-bottom: white solid 2px;
   position: relative;
-  bottom: 115px;
+  bottom: 93px;
   left: 3px;
   width: 360px;
 }
@@ -373,6 +377,9 @@ margin-right: 50px;
   width:160px;
   text-align: start;
 } 
+.allForm{
+  margin-top: 50px;
+}
 .pic_upload{
   margin-left: 75px;
   margin-bottom: 20px;
@@ -392,9 +399,6 @@ margin-right: 50px;
 	outline: inherit;
   width:160px;
   text-align: start;
-  /*position: relative;
-  top: 10px;
-  right: 20px;*/
 }
 
 input[type="file"] {
@@ -405,13 +409,11 @@ input[type="file"] {
 
 /*********************************/
 nav {
-  position: relative;
-  top: 65px;
+  
   margin-left: 75px;
   text-decoration: none;
   font-size: 30px;
-  display: flex;
-  flex-wrap: wrap;
+  padding-top: 60px;
 }
 nav a{
   color:#C7B299;
@@ -425,6 +427,11 @@ nav button{
 }
 nav p{
   margin: 0px;
+}
+nav div{
+  display: flex;
+  flex-wrap: wrap;
+  
 }
 
 /************************************/
@@ -501,35 +508,44 @@ nav p{
       }
 /********************************************/
 /*********adding comments***********/
+.commenter{
+ position: relative;
+ top: -10px;
+ right: 1px;
+}
 .comment-form textarea{
 background: none;
 border: white 2px solid; 
 color: white;
 /*background-color: white;*/
 width: 139%;
+left: 5px;
 position: relative;
-right: 3px;
+padding: 10px 0px 0px 10px;
+
 /*border-radius: 15px;*/
 /*margin-top: 20px;*/
 }
 .comment-form ::placeholder{
   color:white;
-  padding: 7px 5px 5px 5px;
 }
+
 .comment-form{
-  position: relative;
-  left: 10px;
+  margin-top: 50px;
 }
 
 .commentUploader{
-  margin-bottom: 50px;
-  margin-top: -40px;
+ 
+  margin-top: 10px;
+  
   /*border-bottom: white 2px solid;*/
   border: white 2px solid;
   /*border-right: 2px solid white;
   border-right: 2px solid white;
   border-right: 2px solid white;*/
   background-color: #e2d4c8;
+  position: relative;
+  top: -5px;
   
 }
 
@@ -565,7 +581,15 @@ right: 3px;
   display: none;
 
 }
+.upvote-btn{
+  background: none;
+  color: rgb(143, 141, 138);
+  border: none;
+  position: relative;
+  right: 50px;
+  bottom: 1px;
 
+}
 .submitUpvote button{
   background: none;
   /*border: white 2px solid; */
@@ -577,21 +601,17 @@ right: 3px;
   width: 50px;
   border-radius: 30px;
   position:relative;
-  right: 27px;
-  bottom: 18px;
+  right: 27px; 
   object-fit: cover;
   margin-right: -100px;
   margin-bottom: -10px;
   z-index: 999;
-  /*object-position: 100% 100%;*/
-
 }
 .meta{
   position: relative;
-  left: 27px;
-  top: 30px;
+  left: 35px;
+  top: 40px;
   color: #C7B299;
-
 }
 /**********************************/
 .searchIndex{
@@ -616,161 +636,11 @@ right: 3px;
   text-decoration: none;
   color: #C7B299;
 }
-/**********************************/
-/*.post .title span {
-  font-style: italic;
-  font-size: 90%;
-  color: #7d7d7d;
-}*/
-/*
-a {
-  text-decoration: none;
-  color: #225ca3;
-  font-weight: bold;
-  transition: color .1s;
-}
-
-a:hover {
-  color: #3486eb;
-}
-
-button {
-  background-color: #225ca3;
-  border: 0;
-  padding: 1%;
-  color: white;
-  font-weight: bold;
-  transition: background-color .1s;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-button:hover {
-  background-color: #3486eb;
-}
-
-
-textarea, input {
-  padding: .5%;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-textarea:focus, input:focus {
-  outline: none;
-  border: 1px solid #3486eb;
-}
-
-textarea {
-  min-width: 40%;
-  min-height: 100px;
-}
-
-form > div {
-  margin-bottom: 2%;
-}
-
-form label {
-  display: block;
-}
-
-.wrapper {
+.footer {
+  height: 50px;
   width: 100%;
-  min-height: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
+  margin-top: 50px;
+  position: absolute;
+  left: 0;
+  
 }
-
-header {
-  border-bottom: 1px solid #ccc;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 1%;
-}
-
-header h1 {
-  font-size: 1em;
-}
-
-main {
-  flex: 1;
-  padding: 2% 4%;
-}
-
-.btn-no-style {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  text-decoration: none;
-  color: #225ca3;
-  font-size: 100%;
-  font-weight: bold;
-  transition: color .1s;
-  margin-left: 16px;
-}
-
-.btn-no-style:hover {
-  background: none;
-  color: #3486eb;
-}
-
-.delete-post-btn {
-  background-color: #d41414;
-}
-
-.delete-post-btn:hover {
-  background-color: #ff643d;
-}
-
-.edit-link {
-  display: block;
-  margin: -1.5% 0 2% 0;
-}
-
-.upvote-btn {
-  background-color: #197d0f;
-  transition: background-color .1s;
-}
-
-.upvote-btn:hover {
-  background-color: #1f9c13;
-}
-
-.comment-form {
-  margin-bottom: 5%;
-}
-
-.comment {
-  padding: 1%;
-  margin-bottom: 1%;
-}
-
-.comment:nth-child(odd) {
-  background-color: #fff5eb;
-}
-
-.comment .meta {
-  font-size: 90%;
-  margin-bottom: .5%;
-  opacity: .6;
-}
-
-.new-post-form input {
-  width: 300px;
-}
-
-.edit-post-form {
-  margin-bottom: 5%;
-}
-
-footer {
-  border-top: 1px solid #ccc;
-  display: flex;
-  justify-content: center;
-  padding: 1%;
-  font-size: 110%;
-}*/
