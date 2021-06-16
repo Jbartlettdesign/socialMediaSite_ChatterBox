@@ -8,7 +8,7 @@ async function signupFormHandler(event) {
     const password = document.querySelector('#password-signup').value.trim();
     let user_pic = "/uploads/" + document.querySelector('#profile_pic').files[0].name;
     //console.log(user_pic);
-    if (username && email && password) {
+    if (username && email && password && user_pic) {
         const response = await fetch('/api/users', {
         method: 'post',
         body: JSON.stringify({

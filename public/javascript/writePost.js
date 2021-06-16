@@ -28,7 +28,7 @@ async function addtoPost(event){
 event.preventDefault();
 console.log("writing to post");
 const title = document.querySelector("#contentForPost").value;
-
+if(title != ""){
 const response = await fetch('/api/posts', {
     
     method: 'post',
@@ -45,9 +45,11 @@ const response = await fetch('/api/posts', {
       //document.location.replace('/');
       console.log("good");
       modal.style.display = "none";
+      location.reload();
     } else {
       alert(response.statusText);
     } 
+  }
     
 }
 

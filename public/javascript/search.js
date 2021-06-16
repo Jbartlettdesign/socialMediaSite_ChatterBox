@@ -74,23 +74,14 @@ function findUser(dataResponse){
                          //console.log(idArray);  
                         /**************************************/
                         parentSearch.appendChild(searchColumn);
-                        /*var a = document.createElement("a"); 
-                        //////////////////////////
-                        a.setAttribute('href', "/user/" + elementName.id);       
-                        /////////////////////////   
-                        console.log(elementName.id);      
-                        a.innerText = elementName.username;
-                        searchColumn.appendChild(a);*/
-                        /**************************************/
+                      
                     }
                 }
                
             }
             else{
                 finalArray = finalArray.filter(e => e !== elementName.username);
-                //console.log(finalArray);
-                //return;                        
-                //console.log(finalArray)
+            
 
             }
              /**************************************/
@@ -157,13 +148,6 @@ async function searchForUsers(){
             //data.forEach(element => console.log(element.username)
             dataResponse = data;
             
-            /*console.log(data[0].username);
-            if(firstLetter === data[0].username.charAt(0)){
-                console.log("found match");
-                var p = document.createElement("p");
-                p.innerText = data[0].username;
-                searchColumn.appendChild(p);
-            }*/
         })
         .catch(err => {
         console.log(err);

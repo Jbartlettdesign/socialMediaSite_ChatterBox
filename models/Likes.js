@@ -16,6 +16,10 @@ const sequelize = require('../config/connection');
                 key:'id'
             }
         },
+        liker:{
+            type:DataTypes.STRING,
+            allowNull:false
+        },
         post_id: {
             type: DataTypes.INTEGER,
             allowNull: false,

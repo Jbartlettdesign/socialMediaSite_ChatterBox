@@ -1,3 +1,4 @@
+
 <div class = "header">
         <div class = "hub">
             <div class = "searchAndPost">
@@ -58,7 +59,7 @@
         <div class = 'line'></div>
         <div class = "likeReply">
             {{post.likes}} likes
-            <button type="button" class="upvote-btn">upvote</button>
+            <button type="button" id = "b_{{id}}" class="upvote-btn">upvote</button>
             <a id = 'comment' href="/post/{{id}}">view {{comments.length}} {{format_plural "comment" comments.length}}</a>
 
       </div> 
@@ -78,7 +79,7 @@
 </div>
 
 
-
+<script src="/javascript/like.js"></script>
 <script src = "/javascript/search.js"></script>
 <script src="/javascript/comment.js"></script>
 <script src="/javascript/writePost.js"></script>

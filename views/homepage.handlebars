@@ -29,12 +29,14 @@
               <div class ="buttonLogo">
                 <img src="../assets/home.png">
                 <button>Home</button>
+               
               </div>
               <div class ="buttonLogo">
                 <img src="../assets/follow.png">
                 <button>Followers</button>
               </div>
               <div class ="buttonLogo">
+                 <div class = "notificationCircle"></div>
                 <img src="../assets/logoWhite.png">
                 <button>Chatters</button>
               </div>
@@ -58,7 +60,7 @@
         <div class = 'line'></div>
         <div class = "likeReply">
             {{likes}} likes
-            <button type="button" class="upvote-btn">upvote</button>
+            <button id = "b_{{id}}" type="button" class="upvote-btn">upvote</button>
             <a id = 'comment' href="/post/{{id}}">view {{comments.length}} {{format_plural "comment" comments.length}}</a>
             {{!href="#submitComment"}}
       </div> 
@@ -97,8 +99,7 @@
 </div>
 
 </div>
-
-<script src="/utils/helpers"></script>
+<script src="/javascript/like.js"></script>
 <script src = "/javascript/search.js"></script>
 <script src="/javascript/comment.js"></script>
 <script src="/javascript/writePost.js"></script>

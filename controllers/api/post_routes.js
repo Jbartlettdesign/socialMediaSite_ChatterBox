@@ -49,6 +49,7 @@ router.get('/', (req, res) => {
             {
                 model:User,
                 attributes:['username', 'user_pic', 'id']
+                
             }
         ]
     })
@@ -113,31 +114,23 @@ router.post('/', (req, res) => {
 // PUT /api/posts/likes
 /////////////liking a post
 router.put('/likes', (req, res) => {
-    /*Likes.create({
-        user_id: req.body.user_id,
-        post_id: req.body.post_id
-    }).then(() => {
-        return Post.findOne({
-            where: {
-                id:req.body.post_id
-            },
-                attributes: [
-                    'id', 'post_url', 'title', 'created_at',
-                [
-                sequelize.literal('(SELECT COUNT(*) FROM likes where post.id = likes.post_id)'),
-                'likes'
-                ]   
-            ]
-    })*/
-    Post.liking(req.body, { Likes })
+    // make sure the session exists first
     
-    .then(updatedPostData => 
-        res.json(updatedPostData))
-        .catch(err => { 
-            
-        res.status(400).json(err);
-    
-});
+  if (req.session) {
+      console.log(req.session);
+    // pass session id along with all destructured properties on req.body
+    Post.liking({ ...req.body, 
+        user_id: req.session.user_id, 
+        liker: req.session.username
+        }, 
+        { Likes, Comment, User,Post })
+      .then(updatedVoteData => res.json(updatedVoteData))
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  }
+ 
 });
 
 ////////////////////////////

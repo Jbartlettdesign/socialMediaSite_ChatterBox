@@ -44,29 +44,7 @@ router.get('/:id', (req, res) => {
             as: 'post_likes'
     }
     ]
-    /*{
-  "id": 1,
-  "username": "JohnBartlett",
-  "email": "jbartlettdesign@gmail.com",
-  "posts": [
-    {
-      "id": 1,
-      "title": "hello test 1",
-      "post_url": "www.helloworld.com",
-      "created_at": "2021-06-04T01:39:53.000Z"
-    }
-  ],
-  "post_likes": [
-    {
-      "title": "hello test 1",
-      "likes": {
-        "id": 1,
-        "user_id": 1,
-        "post_id": 1
-      }
-    }
-  ]
-}*/
+
     })
     .then(dbUserData => {
         if(!dbUserData){
@@ -190,4 +168,5 @@ router.post('/logout', (req, res) => {
         console.log("failed to load");
     }
 });
+
 module.exports = router;

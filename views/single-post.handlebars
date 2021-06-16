@@ -1,3 +1,5 @@
+<!-- Modal content -->
+                  
 
 <div class = "main">
 <div class="post" id = "postBlock">
@@ -10,7 +12,7 @@
         <div class = 'line'></div>
         <div class = "likeReply">
             {{post.likes}} likes
-            <button type="button" class="upvote-btn">upvote</button>
+            <button id = "b_{{post.id}}" type="button" class="upvote-btn">upvote</button>
             <a href="#submitComment" id = "{{post.id}}_{{post.user.id}}" class = 'comment'>write a comment</a>
 
       </div> 
@@ -52,3 +54,5 @@
 
 </div>
 <script src="/javascript/comment.js"></script>
+<script src="/javascript/like.js"></script>
+

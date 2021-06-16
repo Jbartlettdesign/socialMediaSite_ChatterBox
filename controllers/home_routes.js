@@ -8,7 +8,7 @@ const{Post, User, Comment, Likes} = require('../models');
    
     router.get('/', (req, res) => {
       console.log(req.session);
-        Post.findAll({
+        Post.findAll({order:[['created_at', 'DESC']],
           attributes: [
             'id',
             'post_url',
@@ -163,4 +163,5 @@ const{Post, User, Comment, Likes} = require('../models');
             res.status(500).json(err);
         });
     });
+    
 module.exports = router;

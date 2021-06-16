@@ -5,7 +5,8 @@ class Post extends Model{
     static liking(body, models){
         return models.Likes.create({
             user_id:body.user_id,
-            post_id:body.post_id
+            post_id:body.post_id,
+            liker:body.liker
         }).then(() => {
             return Post.findOne({
                 where: {

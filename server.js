@@ -1,12 +1,13 @@
 const express = require('express');
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
+const path = require('path');
+const app = express();
 const helpers = require('./utils/helpers');
 
 //const fileUpload = require('express-fileupload');
-const app = express();
+
 //////////////allows us to access the any folders like public/stylesheets/style.css, its a middleware
-const path = require('path');
 app.use(express.static(path.join(__dirname, 'public')));
 //////////////////
 /////handlebar

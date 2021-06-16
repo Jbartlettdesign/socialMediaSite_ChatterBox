@@ -10,7 +10,14 @@ text-decoration: none;
   /*box-sizing: border-box;*/
 }
 
-
+.notificationCircle{
+  background-color: rgb(187, 133, 70);
+  height: 7px;
+  width: 7px;
+  border-radius: 10px;
+  position: relative;
+  left: 15px;
+}
 .tanBackground{
   background-color: #C7B299;
   border-top: white solid 25px;
@@ -23,6 +30,7 @@ text-decoration: none;
   border-left: white 25px solid;
   /*border-right: #C7B299 100px solid;*/
   height: 100%;
+  z-index: 1;
 
   }
   .right{
@@ -32,11 +40,14 @@ text-decoration: none;
     border-right: white 25px solid;
     /*border-left: #C7B299 100px solid;*/
     height: 100%;
+    z-index: 1;
+
     }
     
 .header{
   background-color: #7e7670;
   color: #C7B299;
+
   
 }
 /*.colorBlock{
@@ -100,12 +111,12 @@ h1{
 }
 .kraft{
 position: relative;
-top: 505px;
-right: 22px;
-height: 350px;
+top: 520px;
+right: 50px;
+height: 400px;
 width: auto;
 z-index: -999;
-margin-top: -400px;
+margin-top: -350px;
 
 }
 /*.smallKraft{
@@ -190,7 +201,7 @@ margin-top: -400px;
 }
 
 .stories{
-  height: 25px;
+  height: 30px;
   background-color: #ece6e1;
 }
 .main{
@@ -216,11 +227,13 @@ body{
 }
 
 .letterBox{
-  height: 130%;
+  height: 150%;
   margin-top: 30px;
   padding-bottom: 13px;
   object-fit: cover;
-
+  position: relative;
+  right: 25px;
+  bottom: 40px;
 }
 .post {
   width: 250px;
@@ -228,13 +241,14 @@ body{
   line-height: 150%;
   color: white;
   margin-bottom: -200px;
+  margin-right: 100px;
 }
 .post_items{
   position: relative;
   left: 60px;
   font-size: 15px;
   width: 225px;
-  bottom: 300px;
+  bottom: 350px;
   border-bottom: white 1px solid; 
   padding-left: 20px;
   height: 22%;
@@ -242,7 +256,7 @@ body{
 .content{
   word-break:break-all;
   position: relative;
-  top: 20px;
+  top: 30px;
   max-height: 170px;
 }
 .username{
@@ -252,7 +266,7 @@ margin-bottom: 20px;
 }
 .createdAt{
   position: relative;
-  bottom:343px;
+  bottom:390px;
   left: 80px;
   font-size: 15px;
   width: 225px;
@@ -261,7 +275,7 @@ margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
   position: relative;
-  bottom: 80px;
+  bottom: 100px;
   border: white solid 2px;
   left: 2px;
   width: 330px;
@@ -292,7 +306,7 @@ left: 15px;
 .line{
   border-bottom: white solid 2px;
   position: relative;
-  bottom: 93px;
+  bottom: 120px;
   left: 3px;
   width: 360px;
 }
@@ -306,10 +320,11 @@ height: 30px;
   height: 125px;
   width: 125px;
   position:relative;
-  top: 275px;
-  right: 60px;
+  top: 250px;
+  right: 80px;
   border-radius: 75px;
   object-fit: cover;
+  z-index: 1;
   /*object-position: 100% 25%;*/
 
 }
@@ -384,7 +399,7 @@ margin-right: 50px;
   margin-left: 75px;
   margin-bottom: 20px;
   position: relative;
-  bottom: 250px;
+  bottom: 249px;
   right: 20px;
 }
 .pic_upload input{
@@ -510,7 +525,7 @@ nav div{
 /*********adding comments***********/
 .commenter{
  position: relative;
- top: -10px;
+ top: -25px;
  right: 1px;
 }
 .comment-form textarea{
@@ -545,7 +560,7 @@ padding: 10px 0px 0px 10px;
   border-right: 2px solid white;*/
   background-color: #e2d4c8;
   position: relative;
-  top: -5px;
+  top: -25px;
   
 }
 
@@ -644,3 +659,155 @@ padding: 10px 0px 0px 10px;
   left: 0;
   
 }
+/* For Tablets */
+@media screen and (max-width: 780px) {
+  .notification{
+    position: relative;
+    right: 30px;
+  }
+}
+/* For Mobile */
+@media screen and (max-width: 540px) {
+  .notification{
+    position: relative;
+    right: 180px;
+  }
+ .tanBackground{
+   width: 100%;
+ }
+  .buttonLogo{
+    margin-right: 30px;
+  }
+  .chatterBoxLogo {
+    top: -60px;
+  }
+ nav{
+   font-size: 20px;
+   
+ }
+ nav button{
+  font-size: 20px;
+
+ }
+ nav div{
+   position: relative;
+   top: 10px;
+ }
+ #searchFor{
+   width: 130px;
+ }
+.headerTop{
+  width: 103%;
+
+}
+.header{
+  width: 103%;
+
+}
+.stories{
+  width: 103%;
+  
+
+}
+.tanBackground{
+  width: 104%;
+
+}
+.kraft{
+  position: relative;
+  top: 440px;
+  left: 3px;
+  height: 310px;
+  width: auto;
+  z-index: -999;
+  margin-top: -350px;
+  
+}
+.letterBox{
+  
+    height: 115%;
+    margin-top: 30px;
+    padding-bottom: 13px;
+    object-fit: cover;
+    position: relative;
+    top: 10px;
+    left: 23px;
+}
+.profilePic img{
+  /*background-color: teal;*/
+  height: 90px;
+  position:relative;
+  width: 90px;
+  right: 20px;
+  border-radius: 75px;
+  object-fit: cover;
+  z-index: 1;
+  /*object-position: 100% 25%;*/
+
+}
+.post_items{
+
+  position: relative;
+  left: 60px;
+  font-size: 15px;
+  width: 225px;
+  bottom: 250px;
+  border-bottom: white 1px solid; 
+  padding-left: 20px;
+  height: 22%;
+}
+.createdAt{
+  position: relative;
+  bottom:390px;
+  left: 80px;
+  font-size: 15px;
+  width: 225px;
+}
+.likeReply{
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  bottom: 75px;
+  border: white solid 2px;
+  left: 2px;
+  width: 330px;
+  font-size: 13px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: -80px;
+  background-color: #eedbcc;
+  color: rgb(143, 138, 138);  
+}
+.line{
+  border-bottom: white solid 2px;
+  position: relative;
+  bottom: 85px;
+  left: 3px;
+  width: 360px;
+}
+.commentUploader{
+ 
+  margin-top: 5px;
+  
+  /*border-bottom: white 2px solid;*/
+  border: white 2px solid;
+  /*border-right: 2px solid white;
+  border-right: 2px solid white;
+  border-right: 2px solid white;*/
+  background-color: #e2d4c8;
+  position: relative;
+  top: -10px;
+  
+}
+.createdAt{
+  position: relative;
+  bottom:290px;
+  left: 80px;
+  font-size: 15px;
+  width: 225px;
+}
+}
+
